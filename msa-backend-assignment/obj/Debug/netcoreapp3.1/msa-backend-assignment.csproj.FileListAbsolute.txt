@@ -19,3 +19,16 @@ C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\obj\Debug\netc
 C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\obj\Debug\netcoreapp3.1\msa-backend-assignment.dll
 C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\obj\Debug\netcoreapp3.1\msa-backend-assignment.pdb
 C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\obj\Debug\netcoreapp3.1\msa-backend-assignment.genruntimeconfig.cache
+C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\Namotion.Reflection.dll
+C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\NJsonSchema.dll
+C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\NJsonSchema.Yaml.dll
+C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\NSwag.Annotations.dll
+C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\NSwag.AspNetCore.dll
+C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\NSwag.Core.dll
+C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\NSwag.Core.Yaml.dll
+C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\NSwag.Generation.dll
+C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\NSwag.Generation.AspNetCore.dll
+C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\YamlDotNet.dll
+C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\obj\Debug\netcoreapp3.1\msa-backend-assignment.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\obj\Debug\netcoreapp3.1\msa-backend-assignment.csproj.CopyComplete

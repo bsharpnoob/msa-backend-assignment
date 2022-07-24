@@ -5,5 +5,9 @@
     <RootNamespace>msa_backend_assignment</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="NSwag.AspNetCore" Version="13.16.1" />
+  </ItemGroup>
+
 
 </Project>
