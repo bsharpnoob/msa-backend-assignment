@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using msa_backend_assignment.Models;
 
 namespace msa_backend_assignment
 {
@@ -25,10 +27,21 @@ namespace msa_backend_assignment
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDbContext<TrainerDb>(options => options.UseInMemoryDatabase("items"));
+
             services.AddSwaggerDocument(options =>
             {
                 options.DocumentName = "My Amazing API";
                 options.Version = "V1.0";
+            });
+            services.AddHttpClient("reddit", configureClient: client =>
+            {
+                client.BaseAddress = new Uri("https://www.reddit.com/dev/api");
+            });
+            services.AddHttpClient("pokemon", configureClient: client =>
+            {
+                client.BaseAddress = new Uri("https://pokeapi.co/api/v2/");
             });
             services.AddControllers();
         }
