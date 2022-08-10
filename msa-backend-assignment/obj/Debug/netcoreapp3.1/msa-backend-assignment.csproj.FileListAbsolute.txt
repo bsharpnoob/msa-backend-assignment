@@ -1,5 +1,3 @@
-C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\appsettings.Development.json
-C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\msa-backend-assignment.exe
 C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\msa-backend-assignment.deps.json
 C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\msa-backend-assignment.runtimeconfig.json
@@ -13,8 +11,6 @@ C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\obj\Debug\netc
 C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\obj\Debug\netcoreapp3.1\msa-backend-assignment.csproj.CoreCompileInputs.cache
 C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\obj\Debug\netcoreapp3.1\msa-backend-assignment.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\obj\Debug\netcoreapp3.1\staticwebassets\msa-backend-assignment.StaticWebAssets.Manifest.cache
-C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\obj\Debug\netcoreapp3.1\staticwebassets\msa-backend-assignment.StaticWebAssets.xml
-C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\obj\Debug\netcoreapp3.1\scopedcss\bundle\msa-backend-assignment.styles.css
 C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\obj\Debug\netcoreapp3.1\msa-backend-assignment.RazorTargetAssemblyInfo.cache
 C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\obj\Debug\netcoreapp3.1\msa-backend-assignment.dll
 C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\obj\Debug\netcoreapp3.1\msa-backend-assignment.pdb
@@ -74,3 +70,8 @@ C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netc
 C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\bin\Debug\netcoreapp3.1\appsettings.Production.json
+C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\obj\Debug\netcoreapp3.1\staticwebassets\msa-backend-assignment.StaticWebAssets.xml
+C:\Users\PC\Desktop\msa-backend-assignment\msa-backend-assignment\obj\Debug\netcoreapp3.1\scopedcss\bundle\msa-backend-assignment.styles.css

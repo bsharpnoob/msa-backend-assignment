@@ -6,6 +6,9 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using msa_backend_assignment.Models;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
 
 
 namespace msa_backend_assignment
@@ -16,8 +19,7 @@ namespace msa_backend_assignment
     public class PokeController : ControllerBase
     {
         private readonly HttpClient _client;
-        private TrainerDb trainerDb_;
-        public PokeController(IHttpClientFactory clientFactory,TrainerDb trainerDb)
+        public PokeController(IHttpClientFactory clientFactory)
         {
             if(clientFactory == null)
             {
@@ -25,7 +27,6 @@ namespace msa_backend_assignment
             }
 
             _client = clientFactory.CreateClient("pokemon");
-            trainerDb_ = trainerDb;
         }
 
         /// <summary>
@@ -33,64 +34,45 @@ namespace msa_backend_assignment
         /// </summary>
         /// <returns>A JSON object representing the hot feed in reddit</returns>
         [HttpGet]
-        [Route("pokemon")]
+        [Route("ability")]
         [ProducesResponseType(200)]
-        public async Task<IActionResult> GetPokemonData(string name)
+        public async Task<IActionResult> GetPokemonByAbilityName(string name)
         {
-            var res = await _client.GetAsync("pokemon/" + name);
-            var content = await res.Content.ReadAsStringAsync();
-            
-            return Ok(content);
-        }
-        
-        [HttpGet]
-        [Route("trainers")]
-        [ProducesResponseType(200)]
-        public async Task<IActionResult> GetTrainers()
-        {
-            
-            var trainers =  await trainerDb_.Trainers.ToListAsync();
-            return Ok(trainers);
-        }
+            var res = await _client.GetAsync("ability/" + name);
 
-        [HttpPost]
-        [Route("trainers/add")]
-        [ProducesResponseType(200)]
-        public async Task<IActionResult> AddTrainer(string id,string firstName,string lastName)
-        {
-            Trainer newTrainer = new Trainer(id,firstName,lastName);
-            await trainerDb_.Trainers.AddAsync(newTrainer);
-            await trainerDb_.SaveChangesAsync();
-            return Ok();
-        }
-
-        [HttpDelete]
-        [Route("trainers/delete/{id}")]
-        [ProducesResponseType(200)]
-        public async Task<IActionResult> DeleteTrainer(string id)
-        {
-            var trainer = await trainerDb_.Trainers.FindAsync(id);
-            if(trainer == null)
+            if(res == null)
             {
-                return NotFound("Trainer not found!");
+                return NotFound("Ability not found!");
             }
 
-            trainerDb_.Trainers.Remove(trainer);
-            await trainerDb_.SaveChangesAsync();
-            return Ok("Trainer deleted");
+            
 
+            var content = await res.Content.ReadAsStringAsync();
+            Ability json = JsonSerializer.Deserialize<Ability>(content);
+
+            //Deserialize all pokemons and add them into list.
+            List<Pokeman> pokemonList = await ConvertToList(json);
+
+            pokemonList.Sort((x, y) => y.stats[0].base_stat.CompareTo(x.stats[0].base_stat));
+
+            return Ok(pokemonList);
         }
 
-        [HttpPut]
-        [Route("trainers/update/{id}")]
-        [ProducesResponseType(200)]
-        public async Task<IActionResult> UpdateTrainer()
+        public async Task<List<Pokeman>> ConvertToList(Ability ability)
         {
+            List<Pokeman> pokemonList = new List<Pokeman>();
+            for (int i = 0; i < ability.pokemon.Count; i++)
+            {
+                var data = await _client.GetAsync("pokemon/" + ability.pokemon[i].pokemon.name);
+                var content2 = await data.Content.ReadAsStringAsync();
+                Pokeman newJson = JsonSerializer.Deserialize<Pokeman>(content2);
+                pokemonList.Add(newJson);
+            }
 
+            return pokemonList;
         }
 
-
-
+        
 
     }
 }

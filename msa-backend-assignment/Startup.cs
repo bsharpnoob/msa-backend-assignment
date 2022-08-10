@@ -12,6 +12,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using msa_backend_assignment.Models;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
+using System.Configuration;
+using msa_backend_assignment.Repository;
 
 namespace msa_backend_assignment
 {
@@ -39,10 +43,14 @@ namespace msa_backend_assignment
             {
                 client.BaseAddress = new Uri("https://www.reddit.com/dev/api");
             });
-            services.AddHttpClient("pokemon", configureClient: client =>
+            
+            services.AddHttpClient(Configuration["PokemonClientName"], configureClient: client =>
             {
-                client.BaseAddress = new Uri("https://pokeapi.co/api/v2/");
+                client.BaseAddress = new Uri(Configuration["PokemonAddress"]);
             });
+
+            services.AddScoped<IRepository<Trainer,int>, TrainerRepository>();
+
             services.AddControllers();
         }
 
@@ -57,7 +65,14 @@ namespace msa_backend_assignment
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseFileServer(new FileServerOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), "StaticFiles")),
+                RequestPath = "/StaticFiles",
+                EnableDefaultFiles = true
 
+            });
             app.UseAuthorization();
             app.UseOpenApi();
             app.UseSwaggerUi3();
